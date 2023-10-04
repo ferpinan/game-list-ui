@@ -1,0 +1,9 @@
+.game {
+    background: #eee;
+    padding: 10px;
+}
+
+.game img{
+    display: block;
+     margin: 0 auto;
+}
