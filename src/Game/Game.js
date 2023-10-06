@@ -3,10 +3,10 @@ import PropTypes from "prop-types";
 
 function Game(props) {
 
-  const game = props.data.response.data.boxDetails[0];
+  const game = props.data;
 
   return (
-    <div className="game">
+    <div className={`game ${props.isSelected ? "selected" : ""}`} onClick={() => props.onClick(game.boxId)} >
         <img src={game.imageUrls.small} alt={game.boxName} />
         <p>{game.boxName}</p>
         <p>{game.boxId}</p>
@@ -19,7 +19,9 @@ function Game(props) {
 }
 
 Game.propTypes = {
-	data: PropTypes.object
+	data: PropTypes.object,
+	onClick: PropTypes.func,
+	isSelected: PropTypes.bool
 };
 
 export default Game;
